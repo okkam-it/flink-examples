@@ -61,7 +61,7 @@ public class Csv2RowExample {
 		csvLines.add("Column1,Column2");
 		csvLines.add("val1,val2");
 		csvLines.add("test,test");
-		// the following cause an exception with current Flin CsvParser (1.1.2)
+		// the following cause an exception with current Flink CsvParser (1.1.2)
 		csvLines.add("test,\"a field with a \"\"quoted\"\" value\"");
 		FileUtils.deleteQuietly(new File(csvFilePath));
 		FileUtils.writeLines(new File(csvFilePath), csvLines);
