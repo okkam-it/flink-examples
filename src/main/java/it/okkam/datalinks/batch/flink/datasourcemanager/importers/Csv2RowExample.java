@@ -83,8 +83,8 @@ public class Csv2RowExample {
 			DataSet<String> lines = env.readFile(inputFormat, csvFilePath);
 			csvDs = lines.flatMap(new RawCsv2Row(headerStr));
 		} else {
-			// Table API (doesn't parse string containing quotes)
-			// =>
+			// Table API (doesn't parse string fields containing double quotes)
+			// => https://issues.apache.org/jira/browse/FLINK-4785
 			CsvTableSource csvTableSource = new CsvTableSource(csvFilePath, fieldNames, fieldTypes, fieldDelim,
 					lineDelim, quoteCharacter, ignoreFirstLine, ignoreComments, lenient);
 			csvDs = csvTableSource.getDataSet(env);
