@@ -1,5 +1,7 @@
 target/
+bin/
 .settings/
+.checkstyle
 .classpath
 .project
 pom.xml.tag
