@@ -24,8 +24,8 @@ import org.apache.flink.api.java.utils.OptionType;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.api.java.utils.RequiredParameters;
 import org.apache.flink.api.java.utils.RequiredParametersException;
-import org.apache.flink.api.table.Row;
-import org.apache.flink.api.table.sources.CsvTableSource;
+import org.apache.flink.table.sources.CsvTableSource;
+import org.apache.flink.types.Row;
 import org.apache.flink.util.Collector;
 
 public class Csv2RowExample {

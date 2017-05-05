@@ -1,4 +1,4 @@
-# Flink-examples (for Flink 1.1.2)
+# Flink-examples (for Flink 1.2.1)
 
 Collection of common Flink usage and utilities.
 At the moment, there are only the following jobs:
@@ -10,3 +10,7 @@ At the moment, there are only the following jobs:
 	* number of shards configuration: needed in most cases (see https://issues.apache.org/jira/browse/FLINK-4491)
 	* number of replicas configuration
 	* stop words, filter and mappings configuration
+* KafkaFlinkAvroParquet: shows how to integrate kafka, flink, avro and parquet. In particular
+	* AvroDeserializationSchema: deserialize a <T> object to byte[]
+	* AvroSerializationSchema: serialize the deserialized byte[] to a <T> object
+	* deserialized object are passed through a Kafka queue
