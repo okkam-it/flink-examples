@@ -1,7 +1,11 @@
 package it.okkam.datalinks.batch.flink.elasticsearch;
 
-import com.google.common.collect.ImmutableList;
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
+import org.apache.flink.shaded.guava18.com.google.common.collect.ImmutableList;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequest;
 import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -15,11 +19,6 @@ import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.index.IndexNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * This class manages the creation of index templates and index mapping on elasticsearch.

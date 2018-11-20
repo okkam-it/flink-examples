@@ -1,4 +1,4 @@
-package it.okkam.datalinks.batch.flink.datasourcemanager.importers;
+package it.okkam.flink;
 
 import java.io.File;
 import java.io.IOException;
