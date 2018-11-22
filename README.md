@@ -1,4 +1,4 @@
-# Flink-examples (for Flink 1.2.1)
+# Flink-examples (for Flink 1.6.2)
 
 Collection of common Flink usage and utilities.
 At the moment, there are only the following jobs:
