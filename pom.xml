@@ -9,11 +9,9 @@
 	<properties>
 		<flink.version>1.6.2</flink.version>
 		<scala.version>2.11</scala.version>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<mongodb.hadoop.version>1.3.0</mongodb.hadoop.version>
-		<junit.version>4.10</junit.version>
-		<!-- <hadoop.version>2.3.0-cdh5.1.3</hadoop.version> -->
-		<hadoop.version>2.4.0</hadoop.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 	<dependencies>
 		<dependency>
