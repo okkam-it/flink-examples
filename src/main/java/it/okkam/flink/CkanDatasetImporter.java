@@ -5,6 +5,7 @@ import it.okkam.flink.ckan.CkanRestInputFormat.CkanRestInputFormatBuilder;
 
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
+import org.apache.flink.api.java.typeutils.RowTypeInfo;
 import org.apache.flink.types.Row;
 
 public class CkanDatasetImporter {
@@ -38,6 +39,7 @@ public class CkanDatasetImporter {
 		ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 		CkanRestInputFormat ckanInputformat = new CkanRestInputFormatBuilder(catalogUrl, resourceId, dsFields)//
 				.setFetchSize(100_000)//
+//				.setRowTypeInfo(new RowTypeInfo(types))
 //				.setApiKey(authHeader, authKey)
 				.finish();
 		DataSet<Row> rows = env.createInput(ckanInputformat);
