@@ -12,12 +12,9 @@ public class CkanBaseResponse {
   /**
    * CkanBaseResponse constructor.
    * 
-   * @param help
-   *          the help
-   * @param success
-   *          true or false
-   * @param error
-   *          the error (if any)
+   * @param help    the help
+   * @param success true or false
+   * @param error   the error (if any)
    */
   public CkanBaseResponse(String help, boolean success, CkanError error) {
     this.help = help;

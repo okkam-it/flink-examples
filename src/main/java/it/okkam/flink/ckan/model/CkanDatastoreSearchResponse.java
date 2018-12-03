@@ -1,6 +1,6 @@
 package it.okkam.flink.ckan.model;
 
-public class CkanDatastoreSearchResponse {
+public class CkanDatastoreSearchResponse extends CkanBaseResponse {
   private CkanDatastoreSearch result;
 
   public CkanDatastoreSearch getResult() {

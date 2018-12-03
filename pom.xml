@@ -67,6 +67,12 @@
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Required by RawCsv2Row -->
 		<dependency>
@@ -77,14 +83,14 @@
 
 		<!-- Required by CKAN input source -->
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
 			<version>2.7.9</version>
 		</dependency>
 		<!-- Check Hadoop version of jersey when used togheter -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
+			<artifactId>jersey-bundle</artifactId>
 			<version>1.9</version>
 		</dependency>
 	</dependencies>
@@ -103,12 +109,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.17</version>
+				<version>3.0.0</version>
 				<dependencies>
 					<dependency>
 						<groupId>com.puppycrawl.tools</groupId>
 						<artifactId>checkstyle</artifactId>
-						<version>6.17</version>
+						<version>8.6</version>
 					</dependency>
 				</dependencies>
 				<executions>

@@ -2,6 +2,9 @@ package it.okkam.flink.ckan;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.api.json.JSONConfiguration;
 
 import it.okkam.flink.ckan.model.CkanDatastoreSearch;
 import it.okkam.flink.ckan.model.CkanDatastoreSearchResponse;
@@ -62,7 +65,9 @@ public class CkanRestInputFormat extends RichInputFormat<Row, InputSplit>
   }
 
   private static Client getCkanHttpClient() {
-    Client ret = Client.create();
+    ClientConfig config = new DefaultClientConfig();
+    config.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+    Client ret = Client.create(config);
     ret.setConnectTimeout(CONNECTION_TIMEOUT);
     return ret;
   }
@@ -187,13 +192,13 @@ public class CkanRestInputFormat extends RichInputFormat<Row, InputSplit>
     private final CkanRestInputFormat format;
     private static final int SAMPLING_SIZE = 1;
 
-    	/**
-		 * CkanRestInputFormatBuilder constructor.
-		 * 
-		 * @param catalogUrl The CKAN catalog/base url
-		 * @param resourceId the resource to fetch
-		 * @param fieldNames the dataset field names
-		 */
+    /**
+     * CkanRestInputFormatBuilder constructor.
+     * 
+     * @param catalogUrl The CKAN catalog/base url
+     * @param resourceId the resource to fetch
+     * @param fieldNames the dataset field names
+     */
     public CkanRestInputFormatBuilder(String catalogUrl, String resourceId, String[] fieldNames) {
       this.format = new CkanRestInputFormat();
       format.catalogUrl = removeTrailingSlash(catalogUrl);
@@ -207,10 +212,8 @@ public class CkanRestInputFormat extends RichInputFormat<Row, InputSplit>
     /**
      * Sets the security parameters.
      * 
-     * @param authHeader
-     *          the header name to use for authentication key
-     * @param authKey
-     *          the authentication key
+     * @param authHeader the header name to use for authentication key
+     * @param authKey    the authentication key
      * @return this CkanInputFormatBuilder
      */
     public CkanRestInputFormatBuilder setApiKey(String authHeader, String authKey) {
@@ -227,8 +230,7 @@ public class CkanRestInputFormat extends RichInputFormat<Row, InputSplit>
     /**
      * Set /api/action/datastore_search result size.
      * 
-     * @param fetchSize
-     *          the number of elements to fetch per request
+     * @param fetchSize the number of elements to fetch per request
      * @return this CkanInputFormatBuilder
      */
     public CkanRestInputFormatBuilder setFetchSize(int fetchSize) {
