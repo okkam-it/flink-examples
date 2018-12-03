@@ -36,7 +36,10 @@ public class CkanDatasetImporter {
 	 */
 	public static void main(String[] args) throws Exception {
 		ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
-		CkanRestInputFormat ckanInputformat = new CkanRestInputFormatBuilder(catalogUrl, resourceId, dsFields).finish();
+		CkanRestInputFormat ckanInputformat = new CkanRestInputFormatBuilder(catalogUrl, resourceId, dsFields)//
+				.setFetchSize(100_000)//
+//				.setApiKey(authHeader, authKey)
+				.finish();
 		DataSet<Row> rows = env.createInput(ckanInputformat);
 		rows.print();
 	}
