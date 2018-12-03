@@ -5,7 +5,7 @@ import org.apache.avro.io.BinaryEncoder;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.reflect.ReflectDatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
-import org.apache.flink.streaming.util.serialization.SerializationSchema;
+import org.apache.flink.api.common.serialization.SerializationSchema;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -39,17 +39,15 @@ public class AvroSerializationSchema<T> implements SerializationSchema<T> {
     } catch (IOException ex) {
       ex.printStackTrace();
     }
-
     return serializedBytes;
   }
 
   private void ensureInitialized() {
-
     if (writer == null) {
       if (org.apache.avro.specific.SpecificRecordBase.class.isAssignableFrom(avroType)) {
-        writer = new SpecificDatumWriter<T>(avroType);
+        writer = new SpecificDatumWriter<>(avroType);
       } else {
-        writer = new ReflectDatumWriter<T>(avroType);
+        writer = new ReflectDatumWriter<>(avroType);
       }
     }
   }

@@ -1,4 +1,4 @@
-package it.okkam.datalinks.batch.flink.elasticsearch;
+package it.okkam.flink;
 
 import java.net.InetSocketAddress;
 import java.util.ArrayList;

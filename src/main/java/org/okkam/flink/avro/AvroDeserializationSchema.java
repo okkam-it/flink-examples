@@ -5,9 +5,9 @@ import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DecoderFactory;
 import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.avro.specific.SpecificDatumReader;
+import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
-import org.apache.flink.streaming.util.serialization.DeserializationSchema;
 
 public class AvroDeserializationSchema<T> implements DeserializationSchema<T> {
 
@@ -36,9 +36,9 @@ public class AvroDeserializationSchema<T> implements DeserializationSchema<T> {
   private void ensureInitialized() {
     if (reader == null) {
       if (org.apache.avro.specific.SpecificRecordBase.class.isAssignableFrom(avroType)) {
-        reader = new SpecificDatumReader<T>(avroType);
+				reader = new SpecificDatumReader<>(avroType);
       } else {
-        reader = new ReflectDatumReader<T>(avroType);
+				reader = new ReflectDatumReader<>(avroType);
       }
     }
   }

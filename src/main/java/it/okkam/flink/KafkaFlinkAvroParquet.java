@@ -1,23 +1,22 @@
-package org.okkam.flink;
+package it.okkam.flink;
 
+import java.util.Arrays;
+import java.util.Properties;
+
+import org.apache.flink.api.common.serialization.DeserializationSchema;
+import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer010;
-import org.apache.flink.streaming.util.serialization.DeserializationSchema;
-import org.apache.flink.streaming.util.serialization.SerializationSchema;
 import org.okkam.flink.avro.AvroDeserializationSchema;
 import org.okkam.flink.avro.AvroSerializationSchema;
 import org.okkam.flink.parquet.avro.Person;
 import org.okkam.flink.parquet.avro.PhoneNumber;
 import org.okkam.flink.parquet.avro.PhoneType;
-
-import java.util.Arrays;
-import java.util.Properties;
 
 public class KafkaFlinkAvroParquet {
 
@@ -25,8 +24,8 @@ public class KafkaFlinkAvroParquet {
   static String kafkaPort = "localhost:9092";
   static String zkPort = "localhost:2181";
 
-  static SerializationSchema<Person> ser = new AvroSerializationSchema<Person>(Person.class);
-  static DeserializationSchema<Person> deser = new AvroDeserializationSchema<Person>(Person.class);
+	static SerializationSchema<Person> ser = new AvroSerializationSchema<>(Person.class);
+	static DeserializationSchema<Person> deser = new AvroDeserializationSchema<>(Person.class);
 
   /**
    * Kafka test.

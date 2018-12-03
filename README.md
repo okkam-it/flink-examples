@@ -2,15 +2,15 @@
 
 Collection of common Flink usage and utilities.
 At the moment, there are only the following jobs:
-
-* [Csv2RowExample](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/datalinks/batch/flink/datasourcemanager/importers/Csv2RowExample.java): shows how to generate a Flink __DataSet<Row>__ from a CSV file, using
+* [CkanDatasetImporter](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/CkanDatasetImporter.java): shows how to generate a Flink __DataSet<Row>__ from a CKAN catalog (and resource)
+* [Csv2RowExample](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/Csv2RowExample.java): shows how to generate a Flink __DataSet<Row>__ from a CSV file, using
     * __flink-table-api__ : doesn't hangle properly string fields containing double quoted tokens (see https://issues.apache.org/jira/browse/FLINK-4785)
     * __apache commons-csv__ : reads all fields as string
-* [ElastisearchHelper](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/datalinks/batch/flink/elasticsearch/ElasticsearchHelper.java): shows how to create elasticsearch index templates and index mappings, allowing
+* [ElastisearchHelper](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/ElasticsearchHelper.java): shows how to create elasticsearch index templates and index mappings, allowing
 	* number of shards configuration: needed in most cases (see https://issues.apache.org/jira/browse/FLINK-4491)
 	* number of replicas configuration
 	* stop words, filter and mappings configuration
-* [KafkaFlinkAvroParquet](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/org/okkam/flink/KafkaFlinkAvroParquet.java): shows how to integrate kafka, flink, avro and parquet. In particular
+* [KafkaFlinkAvroParquet](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/KafkaFlinkAvroParquet.java): shows how to integrate kafka, flink, avro and parquet. In particular
 	* AvroDeserializationSchema: deserialize a <T> object to byte[]
 	* AvroSerializationSchema: serialize the deserialized byte[] to a <T> object
 	* deserialized object are passed through a Kafka queue

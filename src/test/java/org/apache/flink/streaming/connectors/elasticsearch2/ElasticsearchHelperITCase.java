@@ -17,8 +17,6 @@
  */
 package org.apache.flink.streaming.connectors.elasticsearch2;
 
-import it.okkam.datalinks.batch.flink.elasticsearch.ElasticsearchHelper;
-
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.runtime.client.JobExecutionException;
@@ -44,6 +42,8 @@ import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
+
+import it.okkam.flink.ElasticsearchHelper;
 
 import java.io.File;
 import java.io.IOException;
