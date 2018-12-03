@@ -14,6 +14,8 @@ At the moment, there are only the following jobs:
 	* AvroDeserializationSchema: deserialize a <T> object to byte[]
 	* AvroSerializationSchema: serialize the deserialized byte[] to a <T> object
 	* deserialized object are passed through a Kafka queue
+* [JsonStringToPojo](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/JsonStringToPojo.java): Read json file and deserialize to Pojo
+* [Pojo2JsonString](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/Pojo2JsonString.java): Serialize Pojo to json and write to file
 
 ### Working with Kafka (version 2.11-0.10.2.0)
 
