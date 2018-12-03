@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.okkam.flink</groupId>
@@ -34,7 +35,7 @@
 			<artifactId>flink-streaming-java_${scala.version}</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
-		
+
 		<!-- Parquet dependencies -->
 		<dependency>
 			<groupId>org.apache.parquet</groupId>
@@ -74,8 +75,20 @@
 			<version>1.0</version>
 		</dependency>
 
+		<!-- Required by CKAN input source -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.9</version>
+		</dependency>
+		<!-- Check Hadoop version of jersey when used togheter -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.9</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
