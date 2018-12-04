@@ -16,7 +16,6 @@ At the moment, there are only the following jobs:
 	* deserialized object are passed through a Kafka queue
 * [JsonStringToPojo](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/JsonStringToPojo.java): Read json file and deserialize to Pojo
 * [Pojo2JsonString](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/Pojo2JsonString.java): Serialize Pojo to json and write to file
-* [CkanDatasetImporter](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/CkanDatasetImporter.java): Read dataset from Ckan platforms (usually paginated) with specified parallelism, using flink
 
 ### Working with Kafka (version 2.11-0.10.2.0)
 
