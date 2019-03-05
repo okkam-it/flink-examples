@@ -1,4 +1,4 @@
-# Flink-examples (for Flink 1.6.2)
+# Flink-examples (for Flink 1.7.2)
 
 Collection of common Flink usage and utilities.
 At the moment, there are only the following jobs:
@@ -16,6 +16,8 @@ At the moment, there are only the following jobs:
 	* deserialized object are passed through a Kafka queue
 * [JsonStringToPojo](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/JsonStringToPojo.java): Read json file and deserialize to Pojo
 * [Pojo2JsonString](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/it/okkam/flink/json/Pojo2JsonString.java): Serialize Pojo to json and write to file
+* [EventCountJobLegacy](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/com/dataartisans/queryablestatedemo/EventCountJobLegacy.java): Queryable state (Deprecated API)
+* [EventCountJobNew](https://github.com/okkam-it/flink-examples/blob/master/src/main/java/com/dataartisans/queryablestatedemo/EventCountJobNew.java): Queryable state (New API)
 
 ### Working with Kafka (version 2.11-0.10.2.0)
 
